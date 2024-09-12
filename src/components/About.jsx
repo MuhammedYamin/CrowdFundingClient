@@ -6,6 +6,13 @@ import "../Styles/About.css";
 import donate2 from "../assets/donate2.jpg";
 
 const About = () => {
+  const scrollDown = () => {
+    window.scrollBy({
+      top: 300,  
+      behavior: 'smooth'  
+    });
+  };
+
   return (
     <>
       <div
@@ -22,7 +29,7 @@ const About = () => {
           <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
             Steps to follow to <span style={{ color: "red" }}>Raise Funds</span>
           </h3>
-          <button className="btn mt-auto bg-primary">
+          <button onClick={scrollDown} className="btn mt-auto bg-primary">
             Follow the below steps to raise funds for any of your events.
           </button>
         </div>

@@ -14,7 +14,7 @@ import "../Styles/style.css";
 import kamblaImage from "../assets/img/home/kambla.jpg";
 import huliImage from "../assets/img/home/huli.jpg";
 import fishermanImage from "../assets/img/home/fisherman.jpeg";
-import amrithShettyImage from "../assets/img/home/amrith-shetty-yxfgsX1rlNM-unsplash.jpg";
+import amrithShettyImage from "../assets/img/home/yak.jpg";
 import didupeWaterfallsImage from "../assets/img/home/Didupe-waterfalls46091.jpg";
 
 const images = [

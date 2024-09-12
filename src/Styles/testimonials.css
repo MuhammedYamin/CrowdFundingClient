@@ -1,0 +1,197 @@
+/* Default styles */
+
+.slick-slide {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.6; /* Default opacity for non-active slides */
+    height: 100%; /* Consistent height for all slides */
+    display: flex; /* Ensure content inside is vertically centered */
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the slide takes the full height */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.slick-center {
+    transform: scale(1.2); /* Enlarge the center slide */
+    opacity: 1;            /* Full opacity for the center slide */
+    z-index: 1;            /* Bring it in front */
+}
+
+.slick-slide:not(.slick-center) {
+    transform: scale(0.6); /* Shrink non-center slides */
+    z-index: 0;             /* Push behind the center slide */
+    opacity: 0.6;           /* Reduced opacity for side slides */
+}
+
+.slick-list {
+    overflow: hidden; /* Hide overflow to avoid seeing repeated slides */
+    padding: 0 15%;   /* Adjust the side padding for visibility */
+}
+
+.slick-track {
+    display: flex;
+    align-items: center; /* Vertically center the images */
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.event-description {
+    margin-top: 10px;
+}
+
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 3; /* Ensure the arrows are above the content */
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+.slick-prev::before, .slick-next::before {
+    font-size: 20px;
+    color: white;
+}
+
+.slick-dots {
+    display: none; /* Hide dots navigation */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* Media query for extra-small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    .slick-slide {
+        opacity: 0.5; /* Slightly lower opacity for non-active slides on small screens */
+    }
+
+    .slick-center {
+        transform: scale(1.2); /* Enlarge the center slide more */
+        opacity: 1;            /* Full opacity for the center slide */
+        z-index: 2;            /* Bring it in front */
+    }
+    .slick-list {
+        padding: 0 5%; /* Reduce padding for smaller screens */
+    }
+
+    .carousel-slide {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .carousel-image {
+        width: 100%; /* Increase width for smaller screens */
+        height: 70%; /* Adjust height to ensure the image maintains its shape */
+    }
+
+    .event-description {
+        font-size: 16px; /* Adjust text size */
+        margin-top: 10px; /* Increase margin if needed */
+    }
+
+    .slick-prev, .slick-next {
+        width: 30px;  /* Reduce arrow size */
+        height: 30px;
+    }
+
+    .slick-prev::before, .slick-next::before {
+        font-size: 18px; /* Reduce arrow icon size */
+    }
+
+    
+    .event-description h3 {
+        margin: 0; /* Remove default margin */
+        font-size: 16px; /* Adjust title font size */
+    }
+
+
+    .section-title {
+        font-size: 1.5rem; /* Adjust title font size */
+    }
+}
+
+/* Media query for extra-small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .slick-center {
+        transform: scale(1.2); /* Enlarge the center slide further */
+        opacity: 1;            /* Full opacity for the center slide */
+        z-index: 2;            /* Bring it in front */
+    }
+
+    .slick-list {
+        padding: 0; /* Remove side padding */
+        margin: 0; /* Remove any default margin */
+        display: flex; /* Ensure proper alignment */
+        justify-content: center; /* Center the slides */
+    }
+
+    .slick-track {
+        display: flex; /* Ensure the slides are aligned properly */
+        align-items: center; /* Center vertically */
+    }
+
+    .carousel-slide {
+        height: 250px; /* Adjust height for very small screens */
+        width: 400px; /* Adjust width as needed */
+        display: flex; /* Ensure content is centered */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+    }
+
+    .carousel-image {
+        width: 200px; /* Adjust width to fit the new size */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 80%; /* Ensure the height is proportionate */
+    }
+
+    .event-description {
+        font-size: 14px; /* Smaller text for event descriptions */
+        margin-top: 10px;
+    }
+    .event-description h3 {
+        margin: 0; /* Remove default margin */
+    }
+
+
+    .slick-prev, .slick-next {
+        width: 25px;  /* Smaller arrow size for small screens */
+        height: 25px;
+    }
+
+    .slick-prev::before, .slick-next::before {
+        font-size: 14px; /* Smaller arrow icon size */
+    }
+
+    .section-title {
+        font-size: 1.2rem; /* Smaller title for very small screens */
+    }
+}
+

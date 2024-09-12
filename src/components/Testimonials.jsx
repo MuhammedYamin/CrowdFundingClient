@@ -1,97 +1,109 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';  
-  
+import React from 'react';  
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";  
+import "slick-carousel/slick/slick-theme.css";
+import "../Styles/testimonials.css"
+
+// Unique images
+import event1Img from "../assets/Jain Kashi Mudbidri South Kannad Karnataka.jpg";
+import event2Img from "../assets/img/home/yak.jpg";
+import event3Img from "../assets/kola.jpg";
+import event4Img from "../assets/img/home/Kambala1.jpg";
+import event5Img from "../assets/img/home/dasara.jpg";
+
+// Custom Arrow component
+const Arrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",               // Use flexbox to center content
+        justifyContent: "center",       // Center horizontally
+        alignItems: "center",           // Center vertically
+        background: "#333",
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        cursor: "pointer",
+        zIndex: 3
+      }}
+      onClick={onClick}
+    >
+      <span className="arrow-icon"  />
+    </div>
+  );
+};
+
 const Testimonials = () => {
-  const apiUrl = import.meta.env.VITE_DATABASE_URL;
-  const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    getEvents();
-  })
-
-  const getEvents = async() => {
-    const response = await fetch(`${apiUrl}/users/getApprovedData`);
-    let result = await response.json();
-    if (response.status === 200)
-    {
-      const upcomingEvents = result.filter((event) => new Date(event.sdate) > new Date());
-      setEvents(upcomingEvents);
-    }
-  }
+  const settings = {
+    dots: true,            // Disable navigation dots
+    infinite: true,         // Loop through slides
+    speed: 700,             // Transition speed
+    slidesToShow: 3,        // Show 3 slides at once
+    centerMode: true,       // Center the active slide
+    centerPadding: '5%',   // Padding to allow partial visibility of side slides
+    slidesToScroll: 1,      // Scroll 1 slide at a time
+    autoplay: true,         // Auto-slide
+    autoplaySpeed: 3000,    // Slide interval (in ms)
+    prevArrow: <Arrow />,   // Custom previous arrow
+    nextArrow: <Arrow />    // Custom next arrow
+  };
 
   return (
     <div className="container">
       <div className="section-title" data-aos="fade-in" data-aos-delay="100">
         <h2>EVENTS!</h2>
-        <p style={{ color: "black" }}>
-          Discover the exciting events coming up in our district. Stay informed
-          about the latest initiatives and be a part of the community's growth
-          and development.
-        </p>
       </div>
-
-      <div
-        id="carouselExampleControls"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-inner">
-          {events.length > 0 &&
-            events.map((event, index) => (
-              <>
-                <div
-                  className={`carousel-item ${index === 0 ? "active" : ""}`}
-                  key={index}
-                >
-                  <div className="swiper-slide">
-                    <div className="testimonial-item">
-                      <p style={{ color: "black" }}>
-                        <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                        {event.description}
-                        <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                      </p>
-                      <img
-                        src={event.imagePath ? event.imagePath[0] : ""}
-                        className="testimonial-img"
-                        alt="Upcomming event"
-                      />
-                      <h3>{event.organizers}</h3>
-                      <h4>
-                        Starting: {new Date(event.sdate).toLocaleDateString()}
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </>
-            ))}
+      
+      <Slider {...settings}>
+        <div className="carousel-slide">
+          <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
+            <img src={event1Img} alt="Event 1" className="carousel-image" />
+          </a>
+          <div className="event-description">
+            <h3>Jain Kashi Moodbidri</h3>
+            <p>Details about Event 1</p>
+          </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            style={{ filter: "invert(100%)", color: "black" }}
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            style={{ filter: "invert(100%)", color: "black" }}
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
+        <div className="carousel-slide">
+          <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
+            <img src={event2Img} alt="Event 2" className="carousel-image" />
+          </a>
+          <div className="event-description">
+            <h3>Yakshagana</h3>
+            <p>Details about Event 2</p>
+          </div>
+        </div>
+        <div className="carousel-slide">
+          <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
+            <img src={event3Img} alt="Event 3" className="carousel-image" />
+          </a>
+          <div className="event-description">
+            <h3>Kola</h3>
+            <p>Details about Event 3</p>
+          </div>
+        </div>
+        <div className="carousel-slide">
+          <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
+            <img src={event4Img} alt="Event 4" className="carousel-image" />
+          </a>
+          <div className="event-description">
+            <h3>Kambala</h3>
+            <p>Details about Event 4</p>
+          </div>
+        </div>
+        <div className="carousel-slide">
+          <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
+            <img src={event5Img} alt="Event 5" className="carousel-image" />
+          </a>
+          <div className="event-description">
+            <h3>Dasara</h3>
+            <p>Details about Event 5</p>
+          </div>
+        </div>
+      </Slider>
     </div>
   );
 };

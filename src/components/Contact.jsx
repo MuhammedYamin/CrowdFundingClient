@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -37,15 +37,12 @@ const Contact = () => {
     } finally {
       setLoader(false);
     }
-  }
+  };
 
   return (
     <div className="container" data-aos="fade-up">
       <div className="section-title">
-        <h2
-        
-        >
-          CONTACT US</h2>
+        <h2>CONTACT US</h2>
       </div>
 
       <div className="row">
@@ -54,7 +51,8 @@ const Contact = () => {
             <i className="bx bx-map"></i>
             <h3>Our Address</h3>
             <p style={{ color: "black" }}>
-              A108 Adam Street, New York, NY 535022
+              District Collector Office Bunder, Mangaluru, Karnataka 575001,
+              India
             </p>
           </div>
         </div>
@@ -145,7 +143,9 @@ const Contact = () => {
               <div className="sent-message"></div>
             </div>
             <div className="text-center">
-              <button type='submit' className="button-submit" disabled={loader}>{loader ? "Sending...":"Send Message"}</button>
+              <button type="submit" className="button-submit" disabled={loader}>
+                {loader ? "Sending..." : "Send Message"}
+              </button>
             </div>
           </form>
         </div>
