@@ -16,7 +16,7 @@ const Services = () => {
               <i className="bx bxl-dribbble"></i>
             </div>
             <h4 className="title">
-              <a href="">No middle person</a>
+              No middle person
             </h4>
             <p className="description">
               Directly engage with project creators without intermediary fees or
@@ -31,7 +31,7 @@ const Services = () => {
               <i className="bx bx-file"></i>
             </div>
             <h4 className="title">
-              <a href="">Community</a>
+              Community
             </h4>
             <p className="description">
               Join a vibrant network of supporters and backers dedicated to
@@ -46,7 +46,7 @@ const Services = () => {
               <i className="bx bx-tachometer"></i>
             </div>
             <h4 className="title">
-              <a href="">We maintain transparency</a>
+              We maintain transparency
             </h4>
             <p className="description">
               Enjoy clear, honest communication and detailed updates throughout
@@ -61,7 +61,7 @@ const Services = () => {
               <i className="bx bx-world"></i>
             </div>
             <h4 className="title">
-              <a href="">Best investment</a>
+              Best investment
             </h4>
             <p className="description">
               Maximize returns with high-potential projects curated for

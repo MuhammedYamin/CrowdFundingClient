@@ -40,7 +40,7 @@ const Testimonials = () => {
   const settings = {
     dots: true,            // Disable navigation dots
     infinite: true,         // Loop through slides
-    speed: 700,             // Transition speed
+   speed: 700,             // Transition speed
     slidesToShow: 3,        // Show 3 slides at once
     centerMode: true,       // Center the active slide
     centerPadding: '5%',   // Padding to allow partial visibility of side slides
@@ -48,13 +48,29 @@ const Testimonials = () => {
     autoplay: true,         // Auto-slide
     autoplaySpeed: 3000,    // Slide interval (in ms)
     prevArrow: <Arrow />,   // Custom previous arrow
-    nextArrow: <Arrow />    // Custom next arrow
+    nextArrow: <Arrow />,   // Custom next arrow
+    responsive: [
+      {
+        breakpoint: 768,  // For tablet and mobile screens
+        settings: {
+          slidesToShow: 3,  // Show only 1 slide
+          centerMode: true,
+          centerPadding: '0',  // No padding for the sides
+        
+        }
+      }
+    ]
   };
 
   return (
     <div className="container">
       <div className="section-title" data-aos="fade-in" data-aos-delay="100">
         <h2>EVENTS!</h2>
+        <p
+        style={{color:"Black"}}
+         >
+          Events happening around Daskhina Kannada!
+        </p>
       </div>
       
       <Slider {...settings}>
@@ -94,6 +110,7 @@ const Testimonials = () => {
             <p>Details about Event 4</p>
           </div>
         </div>
+        
         <div className="carousel-slide">
           <a href="https://karnatakatourism.org/tour-item/dakshina-kannada/" target="_blank" rel="noopener noreferrer">
             <img src={event5Img} alt="Event 5" className="carousel-image" />

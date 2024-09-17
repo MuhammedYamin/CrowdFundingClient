@@ -1,39 +1,28 @@
-.main-wrapper {
-    padding: 20px;
-    margin: 10px;
-}
-
-.heading {
-        font-size: 32px;
-        font-weight: bold;
-        position: relative;
-        margin-bottom: 30px;
-        color: #2f4d5a;
-        z-index: 2;
-}
-
-.divider {
-    height: 3px;
-    width: 50px;
-    background-color:#67b0d1;; /* Primary color for the divider */
-    margin: 0 auto 20px; /* Center the divider and add bottom margin */
-}
-
-.accordion-button {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #67b0d1;; /* Primary color for buttons */
-    text-align: left; /* Align text to the left within buttons */
-    width: 100%; /* Ensure buttons take full width of container */
-}
-
-.accordion-button:not(.collapsed) {
-    color: #fff;
-    background-color:#67b0d1;;
-}
-
-.accordion-body {
-    font-size: 0.95rem;
-    color: #555;
-    text-align: center; 
-}
+.accordion-item {
+    margin-bottom: 1rem;
+  }
+  
+  .accordion-button {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-body {
+    padding: 1rem;
+    background-color: #f7f7f7;
+  }
+  
+  .accordion-collapse {
+    height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: height 9.1s ease-out; /* Smooth transition for both open and close */
+  }
+  
+  .accordion-collapse.show {
+    height: auto; /* Adjust to fit content */
+  }
+  

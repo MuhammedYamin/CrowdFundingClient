@@ -59,7 +59,7 @@ const H = () => {
         </div>
 
         <div className="hero-text-container">
-          <h1>Welcome to Dakshina Kannada Funding Portal</h1>
+          <h1>Join Dakshina Kannada's Fundraising Journey!</h1>
           <h2>Be the change maker</h2>
           <a href="#services" className="btn-get-started scrollto">
             <i className="bx bx-chevrons-down"></i>
