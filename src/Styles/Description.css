@@ -1,0 +1,203 @@
+.dt{
+  border:2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+th,td{
+  border: 2px solid black;
+}
+th{
+  background-color: aliceblue ;
+}
+
+/* Modal background */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal form button {
+  border-radius: 10px;
+}
+
+.large-image {
+width: 100%;
+height: 100vh; 
+object-fit: cover; 
+object-position: center; 
+padding: 0px;
+}
+
+
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
+
+.btn-donate-now{
+background-color: #98c2e9;
+color: var(--contrast-color);
+border-radius: 30px;
+padding: 8px 30px;
+border: 2px solid transparent;
+transition: 0.3s all ease-in-out;
+font-size: 14px;
+}
+
+.btn-donate-now:hover {
+border-color: #3e5e7c;
+background-color:  #99ceff;
+color: var(--accent-color);
+}
+
+.about h1 {
+color: var(--heading-color);
+font-size: 30px;
+}
+
+.about p {
+line-height: 1.7;
+color: var(--default-color);
+}
+
+.about .swiper-pagination {
+position: absolute;
+bottom: 30px;
+}
+
+.about .swiper-pagination .swiper-pagination-bullet {
+margin: 0 5px;
+background: #ffffff;
+opacity: 0.3;
+}
+
+.about .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+background: var(--accent-color);
+opacity: 1;
+}
+
+.about .section-subtitle {
+font-size: 15px;
+margin-bottom: 10px;
+display: block;
+color: var(--default-color);
+}
+
+.carousel-inner{
+padding: 50px;
+}
+
+.funds{
+background-color: antiquewhite;
+}
+
+.service-item{
+width: 300px;
+height: auto;
+padding: 20px;
+border-radius: 10px;
+background-color: rgb(155, 132, 101);
+margin: 20px;
+display: inline-block;
+}
+
+
+.modal-open {
+overflow: hidden;
+}
+
+
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* High z-index to ensure it's on top */
+}
+
+.modal-dialog {
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 1060;
+}
+
+.modal-body {
+  max-height: 70vh; /* Limit height of modal body */
+  overflow-y: auto; /* Scroll inside the modal body if needed */
+}
+
+.service-item {
+  max-height: 100px; /* Limit the height when collapsed */
+  transition: max-height 0.3s ease-in-out; /* Smooth transition */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.service-item.expanded {
+  max-height: 500px; /* Allow expansion to a larger height */
+}
+
+.plus , .minus{
+  height: 30px;
+}
+
